@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport  告诉当前的浏览器按照多大的宽度来渲染,在移动设备上原始大小显示和是否缩放的声明-->
+
+
+    <!--
+    width：viewport的宽度
+    height：viewport的高度
+    inital-scale:初始的缩放比例
+    minimum-scale:允许用户缩放到的最小比例
+    maximum-scale:允许用户缩放到的最大比例
+    user-scalable:用户是否可以手动缩放
+    -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <!--告诉浏览器不要把数字当做电话号码-->
+    <meta name="format-detection" content="telephone=no"/>
+    <!--默认吧苹果手机浏览器全屏显示-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title></title>
+
+    <style rel="stylesheet">
+        body, h2 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        section.container {
+            width: 100%;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 14px;
+            clear: both;
+        }
+
+        header {
+            width: 100%;
+            line-height: 100px;
+            background: #333333;
+            margin-bottom: 10px;
+        }
+
+        aside {
+            width: 250px;
+            line-height: 600px;
+            background: #333333;
+            background: red;
+
+        }
+
+        aside.left {
+            float: left;
+            margin-right: 10px;
+        }
+
+        aside.right {
+            float: right;
+            margin-left: 10px;
+        }
+
+        section.main {
+            float: left;;
+            width: 500px;
+            line-height: 600px;
+            background: #333333;
+
+        }
+
+        footer {
+            margin-top: 10px;
+            width: 100%;
+            line-height: 100px;
+            background: #333333;
+
+        }
+
+        footer h2 {
+        }
+
+        section.content {
+            width: 1024px;
+            margin: 10px auto;
+
+        }
+
+        @media all and (max-width: 1023px)and (min-width: 1000px) {
+            aside {
+                width: 230px;
+
+            }
+
+            section.main {
+                width: 480px;
+
+            }
+
+            section.content {
+                width: 960px;
+            }
+        }
+
+        /*ipad*/
+        @media all and (max-width: 999px)and (min-width: 641px) {
+            aside.left {
+                width: 38%;
+                margin-right: 0px;
+
+            }
+
+            aside.right {
+                display: none;
+            }
+
+            section.main {
+                width: 60%;
+                float: right;
+
+            }
+
+            section.content {
+                width: 100%;
+            }
+        }
+
+        /*手机*/
+        @media all and (max-width: 640px){
+            aside {
+                width: 100%;
+                line-height: 100px;
+                margin-right: 0px;
+            }
+            section.main {
+                line-height: 300px;
+                width: 100%;
+                margin: 10px 0px;
+            }
+            section.content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<section class="container">
+    <header>
+        <h2>header</h2>
+    </header>
+    <section class="content">
+        <aside class="left">
+            <h2>left</h2>
+        </aside>
+        <section class="main">
+            <h2>main</h2>
+        </section>
+        <aside class="right">
+            <h2>right</h2>
+        </aside>
+        <div style="clear: both"></div>
+    </section>
+
+    <footer>
+        <h2>footer</h2>
+    </footer>
+</section>
+</body>
+</html>
+
