@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>100行瀑布流</title>
+    <style rel="stylesheet">
+        body, div, html {
+            margin: 0px;
+            padding: 0px;
+            font-family: 微软雅黑;
+            font-size: 14px;
+        }
+
+        .contain-row {
+            float: left;
+            width: 18%;
+            margin-left: 10px;
+        }
+
+        .contain {
+            margin: 10px 20px;
+            width: 100%;
+        }
+
+        img {
+            width: 95%;
+            margin-bottom: 10px;
+            border: 5px solid rgba(255, 54, 121, 0);
+            box-shadow: 0 0 5px #ccc;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <div class="contain-row"></div>
+    <div class="contain-row"></div>
+    <div class="contain-row"></div>
+    <div class="contain-row"></div>
+    <div class="contain-row"></div>
+</div>
+</body>
+<script type="text/javascript">
+    /*获取当前屏幕的高度*/
+    var bh = document.documentElement.clientHeight || document.body.clientHeight;
+    /*模拟数据，获取所有的图片数据*/
+    var oImage = [ "img/1.jpg",  "img/2.jpg",  "img/3.jpg", "img/4.jpg", "img/5.jpg",
+        "img/6.jpg",  "img/7.jpg",  "img/8.jpg", "img/9.jpg",  "img/10.jpg"];
+    /*获取所有的列元素*/
+    var oContainRow = document.getElementsByClassName('contain-row');
+    /*建立一个数组，存储每列的宽度,初始状态都为0*/
+    var ary = [0, 0, 0, 0, 0];
+    /*建立函数addImg 传递参数i，表示向第i列添加数据*/
+    function addImg(i) {
+        /*建立一个图片元素*/
+        var img = new Image();
+        /*设置数num,存储 0-图片数量 之间数的随机数*/
+        var num=Math.round(Math.random()*oImage.length);
+        img.src=oImage[num];
+        img.onload=function(){
+            oContainRow[i].appendChild(img).clientHeight+=img.height;
+            ary[i]=oContainRow[i].clientHeight;
+            var min=Math.min.apply(null,ary);
+            i=ary.indexOf(min);
+            if(oContainRow[i].scrollHeight>bh){
+                window.onscroll=function(){
+                    addImg(i)
+                }
+            }else{
+                addImg(i)
+            }
+        }
+    }
+    addImg(0)
+</script>
+</html>
