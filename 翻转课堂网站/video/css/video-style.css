@@ -1,0 +1,167 @@
+
+#bigBox #box1{
+    width: 1000px;
+    margin: 20px auto;
+}
+#bigBox #box1 h1{
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#bigBox #box1 #media{
+    width: 1000px;
+    margin: 5px auto;
+    height: 540px;
+    background-color: black;
+}
+#bigBox #box2 {
+    width: 1000px;
+    margin: 20px auto;
+}
+#bigBox #box2 #bar1{
+    margin: 0 auto;
+    color: #666666;
+
+}
+#bigBox #box2 #bar1 ul{
+    height: 40px;
+    border-bottom: 1px solid #cccccc;
+
+}
+#bigBox #box2 ul li{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 30Px;
+    margin-right: 40px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #cccccc;
+    cursor: pointer;
+}
+#bigBox #box2  li.act{
+    border-bottom: 1px solid red;
+}
+#bigBox #box2  #text div {
+    display: none;
+    padding: 5px 30px;
+    height: 150px;
+    margin: 0px auto;
+    border: 1px solid #cccccc;
+    background: #f3f3f3;
+}
+#bigBox #box2 #text h1{
+    font-size: 15px;
+    color: #333;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#bigBox #box2 #text p{
+    margin-top: 20px;
+    clear: both;
+    width: 100%;
+    font-size: 13px;
+    margin-bottom: 30px;
+    line-height: 20px;
+    color: #999;
+    letter-spacing: inherit;
+}
+#bigBox #box2  #text .act{
+    display: block;
+}
+#bigBox #box2  #message{
+    clear: both;
+    width: 1000px;
+    margin: 0 auto;
+    height: 300px;
+    overflow: scroll;
+    background: #f3f3f3;
+}
+#bigBox #box2 #message span{
+    font-family: 微软雅黑;
+    display: inline-block;
+    line-height: 30px;
+    width: 981px;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+}
+#bigBox #box2 #message .span1{
+    text-align: center;
+    background: green;
+    font-size: 16px;
+    color: white;
+    letter-spacing: 8px;
+}
+#bigBox #box2 #inputtext{
+    width:1000px;
+    height:60px;
+    border: 1px solid #cccccc;
+    margin-top: 10px;
+}
+#bigBox #box2 #button{
+    width: 50px;
+    height: 30px;
+margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+
+}
+#bigBox #box3 {
+    width: 1010px;
+    height: 30px;
+    margin:20px auto;
+}
+
+#bigBox #box3 #bar2{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    color: #666666;
+}
+
+#bigBox #box3 .li {
+    margin-top: 15px;
+    width: 198px;
+    height: 340px;
+    border: 1px solid #cccccc;
+    float: left;
+}
+#bigBox #box3 .li .hover{
+    color:#f3fff6;
+    background:#35b558;
+}
+#bigBox #box3 .li img{
+    width: 198px;
+    height: 150px;
+}
+#bigBox #box3 .li .div1{
+    text-align: center;
+    color: #666666;
+    margin: 10px auto;
+    font-size: 15px;
+    letter-spacing: 0px;
+
+}
+#bigBox #box3 .li p{
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    line-height: 20px;
+}
+#bigBox #box3 .li .div2{
+    margin: 0 auto;
+    width: 140px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    cursor: pointer;
+    color: #35b558;
+    font-size: 16px;
+    background: #f3fff6;
+    border: 1px solid #35b558;
+
+}

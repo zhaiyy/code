@@ -1,0 +1,320 @@
+
+#bigBox #box1{
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+
+
+}
+#bigBox #box1 .left {
+    width: 200px;
+    height: 305px;
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    border-top: 2px solid #1b8914;
+    border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    text-align: center;
+
+}
+#bigBox #box1 .left div{
+    text-align: left;
+    border-bottom: 1px solid #e6e6e6;
+    border-right: 1px solid #cccccc;
+    line-height: 37px;
+    height: 37px;
+    width: 200px;
+    cursor: pointer;
+}
+#bigBox #box1 .left div:hover{
+    border-left: 2px solid #1b8914;
+    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    background: white;
+}
+#bigBox #box1 .left div:hover span{
+    color: #1b8914;
+    border-right: none;
+}
+#bigBox #box1 .left div span{
+    margin-left: 25px;
+    color: #666666;
+}
+#bigBox #box1 .lefthover{
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 202px;
+    height: 309px;
+    border: 1px solid #cccccc;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+}
+#bigBox #box1 .lefthover .context{
+    height: 30px;
+    line-height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+#bigBox #box1 .middle {
+    margin-top: 20px;
+    float: left;
+    width: 550px;
+    height: 309px;
+    border: 1px solid #cccccc;
+    overflow: hidden;
+    position: relative;
+
+}
+#bigBox #box1 .middle  #inner{
+    width: 3300px;
+    height: 309px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#bigBox #box1 .middle  #inner div{
+    width: 550px;
+    height: 300px;
+    float: left;
+    text-align: center;
+    font-size: 36px;
+    font-family: 微软雅黑;
+    line-height: 300px;
+}
+#bigBox #box1 .middle #inner div img{
+    width: 550px;
+    height: 300px;
+}
+#bigBox #box1 .middle #btn{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: block;
+    bottom: 20px;
+     text-align:center;
+}
+#bigBox #box1 .middle #btn li{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 0px;
+    width: 35px;
+    height: 3px;
+    line-height: 15px;
+    list-style: none;
+    border-radius: 5px;
+    background: #c5c5c5;
+    cursor:pointer ;
+    -webkit-user-select: none;
+}
+#bigBox #box1 .middle #btn li.current {
+    background: #1b8914;
+}
+
+#bigBox #box1 .right {
+ padding: 5px;
+    margin-top: 20px;
+    height: 300px;
+    float: right;
+    width: 200px;
+    border: 1px solid #cccccc;
+
+
+}
+#bigBox #box1 .right .right1{
+    height: 120px;
+    width: 180px;
+    margin: 10px auto;
+}
+#bigBox #box1 .right .right1 ul{
+    display: block;
+    text-align: center;
+}
+#bigBox #box1 .right .right1 ul li{
+    color: #1b8914;
+    font-size:12px;
+    display: inline-block;
+}
+#bigBox #box1 .right p{
+    color: #666666;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+#bigBox #box1 .right .div1{
+    letter-spacing: 1px;
+    width: 168px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 20px;
+    background-color: green;
+    text-align: center;
+    border-radius:4px ;
+    color:white;
+    font-weight: bold;
+    cursor: pointer;
+}
+#bigBox #box2 {
+     width: 1000px;
+     height: 30px;
+     margin: 360px auto;
+ }
+#bigBox #box2 #bar1{
+    margin: 0 auto;
+    color: #666666;
+
+}
+#bigBox #box2 #bar1 ul{
+    height: 40px;
+    border-bottom: 1px solid #cccccc;
+
+}
+#bigBox #box2 ul li{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 30Px;
+    margin-right: 40px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #cccccc;
+    cursor: pointer;
+}
+#bigBox #box2  li.act{
+    border-bottom: 2px solid #1b8914;
+}
+#bigBox #box2  #text div {
+    display: none;
+    /*width: 70%;*/
+    height: 580px;
+    margin: 0px auto;
+    border: 1px solid #cccccc;
+}
+#bigBox #box2  #text .act{
+    display: block;
+}
+#bigBox #box2  #text ul{
+    width: 100%;
+
+}
+#bigBox #box2 #text ul li{
+    padding: 0px;
+    margin: 15px;
+    width: 20%;
+    height: 240px;
+    float: left;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    position: relative;
+
+}
+#bigBox #box2 #text ul li img{
+    margin-left: 10px;
+    width: 90%;
+    height: 235px;
+
+}
+#bigBox #box2 #text ul li span{
+   position: absolute;
+    display: none;
+    top:130px;
+    left: 60px;
+    z-index: 3;
+    font-size: 16px;
+    font-weight: bold;
+    color: #848484;
+}
+
+#bigBox #box2 #text ul li .img2{
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    width: 100px;
+    height: 100px;
+}
+#bigBox #box2 #text ul li .show{
+    display: none;
+    position: absolute;
+    top: 155px;
+    left: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #848484;
+   /background: rgba(204, 204, 204, 0.56);
+}
+#bigBox #box3 {
+    width: 1010px;
+    height: 30px;
+    margin: 640px auto;
+}
+
+#bigBox #box3 #bar2{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    color: #666666;
+}
+
+#bigBox #box3 .li {
+    margin-top: 15px;
+    width: 198px;
+    height: 340px;
+    border: 1px solid #cccccc;
+    float: left;
+}
+
+#bigBox #box3 .li img{
+    width: 198px;
+    height: 150px;
+}
+
+#bigBox #box3 .li .div1{
+    text-align: center;
+   color: #666666;
+    margin: 10px auto;
+    font-size: 15px;
+    letter-spacing: 0px;
+
+}
+#bigBox #box3 .li p{
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    line-height: 20px;
+}
+#bigBox #box3 .li .div2 {
+    margin: 0 auto;
+    width: 140px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    cursor: pointer;
+    color: #35b558;
+    font-size: 16px;
+    background: #f3fff6;
+    border: 1px solid #35b558;
+
+}
+#bigBox #box3 .li .hover{
+    color:#f3fff6;
+    background:#35b558;
+}
+#bigBox #box3 .friend-link{
+margin-top: 400px;
+    width: 1000px;
+    height: 100px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #cccccc;
+}
+#bigBox #box3 .friend-link a {
+    font-size: 14px;
+    color: gray;
+    display: inline-block;
+    margin: 0 10px 4px 0;
+}

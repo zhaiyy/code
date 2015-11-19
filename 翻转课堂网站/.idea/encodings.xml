@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/about/css/about-style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/about/js/about-js.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/css/public.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index/js/index-json.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lesson/css/lesson-style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/register/img/ico_warn.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/register/js/register-js.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/school/css/school-style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/school/js/school-js.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/video/video.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/welcome/img/01.png" charset="UTF-8" />
+  </component>
+</project>
