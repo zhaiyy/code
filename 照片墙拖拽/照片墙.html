@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        ul,li{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            width: 480px;
+            height: 480px;
+            margin: 50px auto;
+            background: #45ff13;
+            position: relative;
+        }
+        li{
+            width: 150px;
+            height: 150px;
+            margin: 5px;
+            float: left;
+           cursor: move;
+            background: #ffe508;
+            -webkit-user-select: none;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="img1/4_6.jpg"></li>
+    <li><img src="img1/4_0.jpg"></li>
+    <li><img src="img1/4_4.jpg"></li>
+    <li><img src="img1/4_8.jpg"></li>
+    <li><img src="img1/4_3.jpg"></li>
+    <li><img src="img1/4_5.jpg"></li>
+    <li><img src="img1/4_2.jpg"></li>
+    <li><img src="img1/4_7.jpg"></li>
+    <li><img src="img1/4_1.jpg"></li>
+
+</ul>
+<script type="text/javascript" src="event3.js"></script>
+<script type="text/javascript" src="oopDrag.js"></script>
+<script type="text/javascript" src="tween.js"></script>
+<script type="text/javascript">
+    var olis=document.getElementsByTagName("li");
+/*    for(var i=0;i<olis.length;i++){
+        var oli=olis[i];
+        oli.style.left=oli.offsetLeft+"px";
+        oli.style.top=oli.offsetTop+"px";
+
+    }
+    for(var j=0;j<olis.length;j++){
+        var oli=olis[j];
+        oli.style.position="absolute";
+        oli.style.margin=0;
+    }*/
+    var increas=olis.length;
+    function increaseIndex(){//拖动的时候元素在最上面，并且此时颜色改变
+        this.style.zIndex=(increas*=2);
+        this.style.background="pink";
+    }
+    function removeColor(){//当停止的时候恢复默认颜色
+        this.style.background="";
+    }
+    for(var i=olis.length-1;i>=0;i--){
+        var oli=olis[i];
+        var bbb={};
+        oli.style.left=(oli.l=oli.offsetLeft)+"px";
+        oli.style.top=(oli.t=oli.offsetTop)+"px";
+        oli.style.position="absolute";
+        oli.style.margin=0;
+        var obj=new Drag(oli);
+        obj.on("dragStart",increaseIndex);
+        obj.on("dragEnd",removeColor);
+        obj.on("dragEnd",function(){
+            animate(this,{left:this.l,top:this.t},700,4)
+        });
+        obj.on("dragging",test);
+        obj.on("dragEnd",changePosition);
+        console.log(bbb)
+    }
+    function testHited(r,b){
+        if((r.offsetLeft+ r.offsetWidth< b.offsetLeft)||(r.offsetTop+ r.offsetHeight< b.offsetTop)
+                ||(r.offsetLeft> b.offsetLeft+ r.offsetWidth)||(r.offsetTop> b.offsetTop+ r.offsetHeight)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    function test(){
+        this.atest=[];
+        for(var i=0;i<olis.length;i++){
+            var oli=olis[i];
+            oli.style.background="";
+            if(oli==this)continue;
+            if(testHited(this,oli)){
+                    oli.style.backgroundColor="red";
+                this.atest.push(oli);
+                }
+            }
+    }
+
+    function changePosition(){
+        var a=this.atest;
+        if(a && a.length){
+            var that=this;
+            a.sort(function(a,b){
+                return (Math.pow(that.offsetLeft- a.offsetLeft,2)+Math.pow(that.offsetTop- a.offsetTop,2))-
+                        (Math.pow(that.offsetLeft- b.offsetLeft,2)+Math.pow(that.offsetTop- b.offsetTop,2));
+            });
+            a[0].style.backgroundColor="black";
+            var oLi=a[0];
+            animate(this,{left:oLi.l,top:oLi.t},700,3);
+            animate(oLi,{left:this.l,top:this.t},700,3);
+            var templ=this.l;
+            var tempt=this.t;
+            this.l=oLi.l;
+            this.t=oLi.t;
+            oLi.l=templ;
+            oLi.t=tempt;
+            bbb[oLi]=oLi.l;
+            console.log(oLi)
+            console.log(oLi.l)
+            console.log(oLi.t)
+
+        }
+
+    }
+
+</script>
+</body>
+</html>

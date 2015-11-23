@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body,div,table,th,tr,td{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: 微软雅黑;
+        }
+        #table{
+            width: 800px;
+            margin: 10px auto;
+            background: -webkit-linear-gradient(top left, #ff7dd7, #28ff17,yellow);
+            border: 1px solid red;
+            box-shadow: 1px 0px blue ;
+            border-radius: 10px;
+        }
+        tr{
+            height: 30px;
+            text-align: center;
+        }
+        th,td{
+            width: 120px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="table">
+    <table id="firstList">
+        <thead>
+        <tr id="firsttr">
+            <th><input type="checkbox" name="tableBox"> </th>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>语文成绩</th>
+            <th>数学成绩</th>
+            <th>英语成绩</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><input type="checkbox" name="tableBox"> </td>
+            <td>1</td>
+            <td>小张</td>
+            <td>20</td>
+            <td>89</td>
+            <td>34</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="tableBox"></td>
+            <td>02</td>
+            <td>小张</td>
+            <td>39</td>
+            <td>65</td>
+            <td>90</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="tableBox"></td>
+            <td>03</td>
+            <td>小李</td>
+            <td>88</td>
+            <td>77</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="tableBox"></td>
+            <td>03</td>
+            <td>小赵</td>
+            <td>83</td>
+            <td>23</td>
+            <td>76</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="tableBox"></td>
+            <td>04</td>
+            <td>小红</td>
+            <td>34</td>
+            <td>99</td>
+            <td>67</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="tableBox"></td>
+            <td>05</td>
+            <td>小两</td>
+            <td>44</td>
+            <td>97</td>
+            <td>62</td>
+        </tr>
+
+
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        var oInput=document.getElementsByName("tableBox");
+        var a=oInput[0];
+         a.onclick=function(){
+           for(var i=1;i<oInput.length;i++){
+               oInput[i].checked=a.checked;
+         }
+        }
+        for(var i=1;i<oInput.length;i++){
+
+            oInput[i].onclick=(function(i){
+                return function () {
+                    var isSup = true;
+                    for(var j=1;j<oInput.length;j++){
+                        if (oInput[j].checked==false) {
+                            isSup=false;
+                            break;
+                        }
+
+                    }
+
+                    a.checked=isSup;
+                }
+            })(i)
+
+        }
+        var oTable=document.getElementById("firstList");
+        var oTh=oTable.getElementsByTagName("th");
+        var oTr=oTable.tBodies[0];
+        var row=oTr.getElementsByTagName("tr");
+        //var allrow=row.getElementsByTagName("th");
+      for(var i=3;i<oTh.length;i++) {
+          var ary = likeArray(row);
+          oTh[i].onclick = (function (i) {
+              return function () {
+                if(oTable.getAttribute("a")==1){
+                    for (var j = 0; j < ary.length; j++) {
+                        ary.sort(function (a, b) {
+                            return a.cells[i].innerHTML - b.cells[i].innerHTML;
+                        })
+                    }
+                    oTable.setAttribute("a",0);
+                }else{
+                        for (var j = 0; j < ary.length; j++) {
+                            ary.sort(function (a, b) {
+                                return b.cells[i].innerHTML - a.cells[i].innerHTML;
+                            })
+                        }
+                        oTable.setAttribute("a",1);
+
+                }
+
+                  for (var j = 0; j< ary.length; j++) {
+                      oTable.appendChild(ary[j]);
+                  }
+              i}
+
+
+          })(i)
+      }
+
+        function likeArray(likeArray){
+            var ary=[];
+            try{
+                ary=[].slice.call(likeArray,0);
+            }catch(e) {
+                for(var i=0;i<likeArray.length;i++){
+                    ary.push(likeArray[i]);
+                }
+            }
+            return ary;
+        }
+    </script>
+</div>
+</body>
+</html>
